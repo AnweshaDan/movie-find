@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Result(props)
+function Result({result})
 {
     return(
         <div className="result">
-           
+           <img src={result.Poster} alt = "Sorry"/>
         </div>
     );
 }

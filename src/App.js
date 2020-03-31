@@ -12,7 +12,7 @@ class App extends Component
     this.state=(
     {
       entry:'',
-      results:{},
+      results:[],
       selected:{}
     })
     this.input=this.input.bind(this);
@@ -36,21 +36,23 @@ class App extends Component
       {
         let r=response.data.Search
         this.setState((prevState)=>({results:r}));
+        });
         console.log(typeof(response.data.Search));
         console.log(typeof(this.state.results));
         console.log((this.state.results[0]));//string
         
         
         
-      });
+      };
     }
   }
+}
   
   render() 
   {
     console.log((this.state.results));
     
-    return (
+    return(
         <div className="App">
           <header>
             <h1> MOVIE SEARCH</h1>

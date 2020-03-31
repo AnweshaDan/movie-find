@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import Result from './Result'
 
-class Results extends Component
+function Results({res})
 {
-    render()
-    {
+   
         return(
-            <div color ="black">
-                {props.res[0].Title}
+            <div className="results">
+                {res.map(result => (
+                    <Result result={res}/>
+                ))}
             </div>
         )
-    }
 }
+
 
 export default Results

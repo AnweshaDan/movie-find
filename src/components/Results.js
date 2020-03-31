@@ -1,17 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
+
 import Result from './Result'
 
-function Results({res})
+function Results ({ results }) 
 {
-   
-        return(
-            <div className="results">
-                {res.map(result => (
-                    <Result result={res}/>
-                ))}
-            </div>
-        )
+	const list = Object.entries(results);
+    console.log(list.length);
+	return (
+		<section className="results">
+			{list.map((c) => (
+				<Result result={c}/>
+			))}
+		</section>
+	)
 }
-
-
+//{results.map(result => (
+	//<Result result={result} />
+	//))}
 export default Results

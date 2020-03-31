@@ -1,3 +1,5 @@
+
+ 
 import React, { Component } from 'react';
 import Search from './components/Search'
 import Results from './components/Result'
@@ -24,7 +26,9 @@ class App extends Component
   input=(event)=>
   {
     let entry= event.target.value; 
-    this.setState((prevState)=>({entry:entry}));
+    this.setState(prevState=> {
+      return { ...prevState, entry:entry }
+    });
     console.log(entry);
     
   }
@@ -35,31 +39,33 @@ class App extends Component
       axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=dcac5260&s="+this.state.entry).then((response)=>
       {
         let r=response.data.Search
-        this.setState((prevState)=>({results:r}));
+        this.setState(prevState=>{
+          return{ ...prevState, results:r}
         });
-        console.log(typeof(response.data.Search));
-        console.log(typeof(this.state.results));
-        console.log((this.state.results[0]));//string
+        //console.log(typeof(response.data.Search));
+        //console.log(typeof(this.state.results));
+        //console.log((this.state.results[0]));//string
+        const list = Object.entries(r);
+        console.log(Object.entries(list[0]))
         
         
-        
-      };
+      });
     }
   }
-}
+  
   
   render() 
   {
-    console.log((this.state.results));
+    console.log(typeof(this.state.results));
     
-    return(
+    return (
         <div className="App">
           <header>
             <h1> MOVIE SEARCH</h1>
           </header>
           <main>
            <Search input={this.input} search={this.search}/>
-           <Results res={this.state.results}/>
+           <Results results={this.state.results}/>
           </main>
         </div>
     );

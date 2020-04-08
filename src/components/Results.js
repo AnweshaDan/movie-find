@@ -4,11 +4,12 @@ import Result from './Result'
 
 function Results ({ results }) 
 {
-	const list = Object.entries(results);
-    console.log(list.length);
+	//const list = Object.entries(results); 
+	console.log(res["0"].Title);//doesnt log anything
+	console.log(res);//doesnt log anything
 	return (
 		<section className="results">
-			{list.map((c) => (
+			{res.map((c) => (
 				<Result result={c}/>
 			))}
 		</section>
@@ -17,4 +18,4 @@ function Results ({ results })
 //{results.map(result => (
 	//<Result result={result} />
 	//))}
-export default Results
+export default Results 

@@ -25,11 +25,11 @@ class App extends Component
   
   input=(event)=>
   {
-    let entry= event.target.value; 
+    let e= event.target.value; 
     this.setState(prevState=> {
-      return { ...prevState, entry:entry }
+      return { ...prevState, entry:e }
     });
-    console.log(entry);
+    console.log(e);
     
   }
   search=(event)=>
@@ -39,14 +39,16 @@ class App extends Component
       axios.get("http://www.omdbapi.com/?i=tt3896198&apikey=dcac5260&s="+this.state.entry).then((response)=>
       {
         let r=response.data.Search
+
         this.setState(prevState=>{
           return{ ...prevState, results:r}
         });
-        //console.log(typeof(response.data.Search));
-        //console.log(typeof(this.state.results));
+        //console.log(typeof(Object.entries(Object.entries(Object.entries(r)))));
+        console.log((r)["0"].Title);
+        //console.log(typeof((this.state.results)));
         //console.log((this.state.results[0]));//string
-        const list = Object.entries(r);
-        console.log(Object.entries(list[0]))
+        //const list = Object.entries(r);
+        //console.log(Object.entries(list[0]))
         
         
       });
@@ -56,7 +58,7 @@ class App extends Component
   
   render() 
   {
-    console.log(typeof(this.state.results));
+    (this.state.results).map((c)=>(console.log("Hola")));//prints hola 10 times
     
     return (
         <div className="App">
@@ -65,7 +67,7 @@ class App extends Component
           </header>
           <main>
            <Search input={this.input} search={this.search}/>
-           <Results results={this.state.results}/>
+           <Results res={this.state.results}/>
           </main>
         </div>
     );

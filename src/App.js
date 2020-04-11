@@ -44,7 +44,7 @@ class App extends Component
           return{ ...prevState, results:r}
         });
         //console.log(typeof(Object.entries(Object.entries(Object.entries(r)))));
-        console.log((r)["0"].Title);
+        //console.log((r)["0"].Title);
         //console.log(typeof((this.state.results)));
         //console.log((this.state.results[0]));//string
         //const list = Object.entries(r);

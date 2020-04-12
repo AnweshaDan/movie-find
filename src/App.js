@@ -2,7 +2,7 @@
  
 import React, { Component } from 'react';
 import Search from './components/Search'
-import Results from './components/Result'
+import Results from './components/Results'
 import axios from 'axios'
 
 
@@ -11,12 +11,12 @@ class App extends Component
   constructor()
   {
     super();
-    this.state=(
+    this.state=
     {
       entry:'',
       results:[],
       selected:{}
-    })
+    }
     this.input=this.input.bind(this);
     this.search=this.search.bind(this);
 

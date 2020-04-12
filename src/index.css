@@ -49,34 +49,47 @@ main {
 	margin: 0px -15px;
 }
 
-.results .result {
-	width: 33.333%;
-	min-width: 250px;
-	padding: 15px;
-	display: flex;
-	flex-direction: column;
-	cursor: pointer;
-}
 
-.results .result img {
+.container {
+	position: relative;
+	width: 50%;
+  }
+  
+  .image {
 	display: block;
+	max-width: 100%;
+	margin:auto;
+	height: auto;
+	padding: 20px;
+  }
+.overlay {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	background-color: #FEC8D8;
+	overflow: hidden;
 	width: 100%;
-}
-
-.results .result h3 {
-	color: #FFF;
+	height:0;
+	transition: .5s ease;
+  }
+  
+  .container:hover .overlay {
+	bottom: 0;
+	height: 100%;
+  }
+  
+  .text {
+	
+	word-wrap: break-word;
+	color: white;
 	font-size: 20px;
-	font-weight: 600;
-	padding: 10px;
-	background: #445565;
-	flex: 1 1 100%;
-	transition: 0.4s ease-out;
-}
-
-.results .result:hover h3 {
-	background: #FFF;
-	color: #223343;
-}
-
+	position: relative;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+  }
 
 	

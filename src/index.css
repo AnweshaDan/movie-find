@@ -80,7 +80,7 @@ main {
   .container:hover .overlay {
 	bottom: 0;
 	height: 100%;
-	
+	opacity:0.5;
 	border: 50 px ;
 	border-color:#8a8a8a ;
   }
@@ -88,6 +88,7 @@ main {
   .text {
 	
 	word-wrap: break-word;
+	background-color: black;
 	color: white;
 	font-size: 20px;
 	position: relative;

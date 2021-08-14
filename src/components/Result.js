@@ -6,7 +6,7 @@ function Result({ result }) {
 	return (
 		<div className="container" >
 			
-			<img src={result.Poster} className="image" />
+			<img src={result.Poster} alt="img" className="image" />
 			<div className="overlay">
 				<div className="text">
 					<h2>{result.Title}</h2>
